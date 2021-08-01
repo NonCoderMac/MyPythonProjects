@@ -1,13 +1,13 @@
 """Program to display Ghanaian day names for languages selected"""
 
-def ghana_name(lang, sex, day):
+def ghana_name(sex, day, lang = 'AKAN'):
     #ensuring no input error from user
     lang = lang.lower()
     sex = sex.lower()
     day = day.lower()
 
     #creating reference dictionary database
-    ref = {
+    reference = {
         'akan' : {'male' : {'sunday' : 'Kwasi', 'monday' : 'Kwadwo', 'tuesday' : 'Kwabena', 'wednesday' : 'Kwaku', 'thursday' : 'Yaw', 'friday' : 'Kofi', 'saturday' : 'Kwame'},
                   'female' : {'sunday' : 'Esi', 'monday' : 'Adwoa', 'tuesday' : 'Abena', 'wednesday' : 'Akua', 'thursday' : 'Yaa', 'friday' : 'Afia', 'saturday' : 'Ama'}},
         'ewe' : {'male' : {'sunday' : 'Koshi', 'monday' : 'Kodzo', 'tuesday' : 'Komla', 'wednesday' : 'Koku', 'thursday' : 'Yao', 'friday' : 'Koffi', 'saturday' : 'Komi'},
@@ -17,7 +17,7 @@ def ghana_name(lang, sex, day):
 
     #outputing feedback
     try:
-        return ref[lang][sex][day]
+        return reference[lang][sex][day]
 
     except:
         print ("Please re-check entered info. Something is not right")
